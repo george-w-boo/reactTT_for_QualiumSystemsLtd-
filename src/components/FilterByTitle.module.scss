@@ -1,0 +1,24 @@
+//** variables
+$text: #9c9c9c;
+$input-bg-color: #fff;
+$input-text-color: #a3a3a3;
+
+//** form
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+	&__field {
+		width: 360px;
+    margin: 30px;
+		background: #fff;
+		color: $input-text-color;
+		font: inherit;
+		box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+		border: 0;
+    border-radius: 10px;
+		outline: 0;
+		padding: 22px 18px;
+	}
+}
