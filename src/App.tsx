@@ -21,11 +21,8 @@ export const App: React.FC = () => {
 
       setIsLoading(false);
       setProducts(productsFromApi);
+      setFilteredProducts(productsFromApi);
     })();
-
-    if (!filteredProducts.length) {
-      setFilteredProducts(products);
-    }
   }, []);
 
   const paginationHandler = (pageNumber: number) => {
@@ -34,7 +31,7 @@ export const App: React.FC = () => {
 
   const filterByTitle = (title: string) => {
     const currentFilteredProducts = [...products].filter((product: Product) => {
-      return product.title.toLowerCase().includes(title.toLocaleLowerCase());
+      return product.title.toLowerCase().includes(title.toLowerCase());
     });
 
     setFilteredProducts(currentFilteredProducts);
@@ -42,7 +39,7 @@ export const App: React.FC = () => {
 
   const currentPageFirstProductIndex = currentPage * productsPerPage - productsPerPage;
   const currentPageLastProductIndex = currentPage * productsPerPage;
-  const currentPageProducts = [...filteredProducts]
+  const currentPageProducts = filteredProducts
     .slice(currentPageFirstProductIndex, currentPageLastProductIndex);
 
   return (
