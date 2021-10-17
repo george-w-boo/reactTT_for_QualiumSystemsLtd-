@@ -5,3 +5,9 @@ export interface Product {
   price: number;
   inCart: boolean;
 }
+
+export interface NewProduct {
+  title: string;
+  price: number;
+  description: string;
+}

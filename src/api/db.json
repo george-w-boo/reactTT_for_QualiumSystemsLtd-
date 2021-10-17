@@ -118,6 +118,12 @@
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "price": 900,
       "inCart": false
+    },
+    {
+      "title": "sdfdf",
+      "price": 444,
+      "description": "adsfsd",
+      "id": "0luyDn4"
     }
   ],
   "cart": [
