@@ -1,18 +1,25 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { Container } from './components/Container';
 import { CreateView } from './pages/CreateView';
 import { MainView } from './pages/MainView';
+import { NotFound } from './pages/NotFound';
 
 export const App: React.FC = () => {
   return (
     <Container>
       <Switch>
+        <Route path="/" exact>
+          <Redirect to="main_view" />
+        </Route>
+        <Route path="/main_view">
+          <MainView />
+        </Route>
         <Route path="/create_view">
           <CreateView />
         </Route>
-        <Route path="/">
-          <MainView />
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
     </Container>
