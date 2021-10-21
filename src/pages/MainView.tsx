@@ -16,7 +16,8 @@ export const MainView: React.FC = () => {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(10);
+
+  const productsPerPage = 10;
 
   useEffect(() => {
     (async () => {
@@ -27,18 +28,19 @@ export const MainView: React.FC = () => {
       setProducts(productsFromApi);
       setFilteredProducts(productsFromApi);
     })();
-  }, []);
+  }, [products.length]);
 
   const paginationHandler = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
 
   const filterByTitle = (title: string) => {
-    const currentFilteredProducts = [...products].filter((product: Product) => {
+    const currentFilteredProducts = products.filter((product: Product) => {
       return product.title.toLowerCase().includes(title.toLowerCase());
     });
 
     setFilteredProducts(currentFilteredProducts);
+    setCurrentPage(1);
   };
 
   const currentPageFirstProductIndex = currentPage * productsPerPage - productsPerPage;
@@ -53,11 +55,13 @@ export const MainView: React.FC = () => {
       </Link>
       <FilterByTitle onFilter={filterByTitle} />
       <ProductList products={currentPageProducts} loadingStatus={isLoading} />
-      <Pagination
-        productsPerPage={productsPerPage}
-        productsNumber={filteredProducts.length}
-        onPaginationListItem={paginationHandler}
-      />
+      {filteredProducts.length > 10 && (
+        <Pagination
+          productsPerPage={productsPerPage}
+          productsNumber={filteredProducts.length}
+          onPaginationListItem={paginationHandler}
+        />
+      )}
     </>
   );
 };

@@ -12,27 +12,29 @@ export const FilterByTitle: React.FC<Props> = (props) => {
   const [filterBy, setFilterBy] = useState('');
   const [isClearFilter, setIsClearFilter] = useState(false);
 
-  return (
-    <form
-      className={styles.form}
-      onSubmit={(event) => {
-        event.preventDefault();
-        if (filterBy) {
-          setIsClearFilter(true);
-        }
+  const submitHandler = (event: React.FormEvent) => {
+    event.preventDefault();
 
-        onFilter(filterBy);
-      }}
-    >
+    if (filterBy) {
+      setIsClearFilter(true);
+
+      onFilter(filterBy);
+    }
+  };
+
+  const clearFilterHandler = () => {
+    setFilterBy('');
+    onFilter('');
+    setIsClearFilter(false);
+  };
+
+  return (
+    <form className={styles.form} onSubmit={submitHandler}>
       {isClearFilter && (
         <Button
           type="button"
           content="Clear Filter"
-          onClick={() => {
-            setFilterBy('');
-            onFilter('');
-            setIsClearFilter(false);
-          }}
+          onClick={clearFilterHandler}
         />
       )}
       <input

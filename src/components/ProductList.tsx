@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Card } from './Card';
 import { Product } from '../types/Product';
 import { Grid } from './Grid';

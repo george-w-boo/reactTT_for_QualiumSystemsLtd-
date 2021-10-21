@@ -25,3 +25,9 @@ export const addProduct = async (newProduct: NewProduct) => {
 
   return null;
 };
+
+export const deleteProduct = async (productId: string) => {
+  await fetch(`${BASE_URL}/products/${productId}`, {
+    method: 'DELETE',
+  });
+};

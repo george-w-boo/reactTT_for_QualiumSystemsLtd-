@@ -23,13 +23,13 @@ export const Pagination: React.FC<Props> = (props) => {
     <ul className={styles['pagination-list']}>
       {paginationList.map(item => (
         <li key={item} className={styles['pagination-list__item']}>
-          <a
-            href={`/main_view_${item}`}
+          <button
+            type="button"
             className={styles['pagination-list__link']}
             onClick={() => onPaginationListItem(item)}
           >
             {item}
-          </a>
+          </button>
         </li>
       ))}
     </ul>
