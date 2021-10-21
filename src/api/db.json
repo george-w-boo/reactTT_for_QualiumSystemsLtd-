@@ -1,11 +1,10 @@
 {
   "products": [
     {
-      "id": "jko2vslbj4",
       "title": "Scoda",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "price": 600,
-      "inCart": false
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
+      "id": "jko2vslbj4"
     },
     {
       "id": "hxgyij8ixgj",
@@ -35,13 +34,13 @@
       "id": "m7281hc8os"
     },
     {
-      "title": "mazda",
-      "price": 43,
-      "description": "sdfs",
+      "title": "Mazda",
+      "price": 43000,
+      "description": "Made in Japan",
       "id": "_nsHtHy"
     },
     {
-      "title": "OpelAstra",
+      "title": "Opel Astra",
       "price": 434,
       "description": "Opel is a sponsor of Borussia Dortmund",
       "id": "7eTT_ib"
@@ -53,11 +52,10 @@
       "id": "H5h1S5S"
     },
     {
-      "id": "jko2vslbjdfg4",
       "title": "Scoda",
+      "price": 605,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
-      "price": 600,
-      "inCart": false
+      "id": "jko2vslbjdfg4"
     },
     {
       "id": "hxgyidfgfj8ixgj",
@@ -88,12 +86,6 @@
       "inCart": false
     },
     {
-      "title": "mazda",
-      "price": 43,
-      "description": "sdfs",
-      "id": "_nsHtdgfdgHy"
-    },
-    {
       "title": "Bugatti",
       "price": 33443,
       "description": "sfsfsdfs",
@@ -104,6 +96,18 @@
       "price": 2323,
       "description": "sdfsf",
       "id": "-MG0fAB"
+    },
+    {
+      "title": "Mercedes-Benz",
+      "price": 23540,
+      "description": "The best German car brand.",
+      "id": "_6yFgcy"
+    },
+    {
+      "title": "Zaporozhec",
+      "price": 300,
+      "description": "Made in Ukraine",
+      "id": "CdVkMPc"
     }
   ],
   "cart": [

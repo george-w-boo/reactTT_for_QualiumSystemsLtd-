@@ -23,7 +23,7 @@ export const Card: React.FC<Props> = (props) => {
       <h2 className={styles.card__title}>{product.title}</h2>
       <p className={styles['card__price-tag']}>{`$${product.price}`}</p>
       <p className={styles.card__description}>{product.description}</p>
-      <form action="">
+      <form action="" className={styles.card__form}>
         <Link to={`/edit_view/${product.id}`} className={styles.card__link}>
           <Button type="button" content="Edit" />
         </Link>

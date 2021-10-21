@@ -21,7 +21,15 @@
   }
 
   &__description {
+    flex-grow: 1;
     margin-bottom: 15px;
+
     color: #5468ff;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
 }

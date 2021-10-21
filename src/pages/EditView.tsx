@@ -62,7 +62,7 @@ export const EditView: React.FC<Props> = (props) => {
             setDescription(event.target.value);
           }}
         />
-        <Button type="submit" content="Edit" onClick={() => setIsEntering(false)} />
+        <Button type="submit" content="Save" onClick={() => setIsEntering(false)} />
       </form>
     </>
   );

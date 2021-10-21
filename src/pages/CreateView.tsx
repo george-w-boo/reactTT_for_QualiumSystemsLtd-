@@ -55,7 +55,7 @@ export const CreateView: React.FC = () => {
             setDescription(event.target.value);
           }}
         />
-        <Button type="submit" content="Create" onClick={() => setIsEntering(false)} />
+        <Button type="submit" content="Save" onClick={() => setIsEntering(false)} />
       </form>
     </>
   );
