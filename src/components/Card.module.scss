@@ -7,6 +7,10 @@
   border: 2px solid #5468ff;
   border-radius: 10px;
 
+  &__link {
+    text-decoration: none;
+  }
+
   &__title {
     color: #5468ff;
   }

@@ -29,11 +29,10 @@
       "inCart": false
     },
     {
-      "id": "m7281hc8os",
       "title": "Honda",
+      "price": 860,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
-      "price": 850,
-      "inCart": false
+      "id": "m7281hc8os"
     },
     {
       "title": "mazda",
@@ -44,13 +43,13 @@
     {
       "title": "OpelAstra",
       "price": 434,
-      "description": "adsf",
+      "description": "Opel is a sponsor of Borussia Dortmund",
       "id": "7eTT_ib"
     },
     {
       "title": "Bugatti",
       "price": 33443,
-      "description": "sfsfsdfs",
+      "description": "The fastest car in the world",
       "id": "H5h1S5S"
     },
     {
@@ -95,16 +94,16 @@
       "id": "_nsHtdgfdgHy"
     },
     {
-      "title": "OpelAstra",
-      "price": 434,
-      "description": "adsf",
-      "id": "7eTTdfgf_ib"
-    },
-    {
       "title": "Bugatti",
       "price": 33443,
       "description": "sfsfsdfs",
       "id": "H5h1Sdfgdf5S"
+    },
+    {
+      "title": "BMW",
+      "price": 2323,
+      "description": "sdfsf",
+      "id": "-MG0fAB"
     }
   ],
   "cart": [

@@ -26,6 +26,16 @@ export const addProduct = async (newProduct: NewProduct) => {
   return null;
 };
 
+export const editProduct = async (productId: string, newProduct: NewProduct) => {
+  await fetch(`${BASE_URL}/products/${productId}`, {
+    method: 'PUT',
+    body: JSON.stringify(newProduct),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+};
+
 export const deleteProduct = async (productId: string) => {
   await fetch(`${BASE_URL}/products/${productId}`, {
     method: 'DELETE',

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { deleteProduct } from '../api/api';
 
@@ -23,7 +24,9 @@ export const Card: React.FC<Props> = (props) => {
       <p className={styles['card__price-tag']}>{`$${product.price}`}</p>
       <p className={styles.card__description}>{product.description}</p>
       <form action="">
-        <Button type="button" content="Edit" />
+        <Link to={`/edit_view/${product.id}`} className={styles.card__link}>
+          <Button type="button" content="Edit" />
+        </Link>
         <Button type="submit" content="Delete" onClick={() => onDeleteHandler(product.id)} />
         <Button type="button" content="Add to cart" />
       </form>

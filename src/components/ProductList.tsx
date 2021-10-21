@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Card } from './Card';
 import { Product } from '../types/Product';
+import { Card } from './Card';
 import { Grid } from './Grid';
 
 type Props = {
@@ -19,12 +19,14 @@ export const ProductList: React.FC<Props> = (props) => {
   }
 
   return (
-    <ul>
-      <Grid>
-        {products.map(product => (
-          <Card product={product} key={product.id} />
-        ))}
-      </Grid>
-    </ul>
+    <>
+      <ul>
+        <Grid>
+          {products.map(product => (
+            <Card product={product} key={product.id} />
+          ))}
+        </Grid>
+      </ul>
+    </>
   );
 };
