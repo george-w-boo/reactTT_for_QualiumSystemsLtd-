@@ -1,4 +1,4 @@
-import { NewProduct } from '../types/Product';
+import { NewProduct, NewCartProduct } from '../types/Product';
 
 const BASE_URL = 'http://localhost:3000';
 
@@ -8,10 +8,34 @@ export const getProducts = async () => {
   return response.json();
 };
 
+export const getCartProducts = async () => {
+  const response = await fetch(`${BASE_URL}/cart`);
+
+  return response.json();
+};
+
 export const addProduct = async (newProduct: NewProduct) => {
   const response = await fetch(`${BASE_URL}/products`, {
     method: 'POST',
     body: JSON.stringify(newProduct),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || 'Could not add the product');
+  }
+
+  return null;
+};
+
+export const addCartProduct = async (newCartProduct: NewCartProduct) => {
+  const response = await fetch(`${BASE_URL}/cart`, {
+    method: 'POST',
+    body: JSON.stringify(newCartProduct),
     headers: {
       'Content-Type': 'application/json',
     },

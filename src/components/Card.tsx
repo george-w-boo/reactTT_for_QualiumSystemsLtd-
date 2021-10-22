@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { deleteProduct } from '../api/api';
+import { deleteProduct, addCartProduct } from '../api/api';
 
-import { Product } from '../types/Product';
+import { Product, NewCartProduct } from '../types/Product';
 import { Button } from './Button';
 import styles from './Card.module.scss';
 
@@ -13,9 +13,15 @@ type Props = {
 
 export const Card: React.FC<Props> = (props) => {
   const { product } = props;
+  const [isAdded, setIsAdded] = useState(false);
 
   const onDeleteHandler = (id: string) => {
     deleteProduct(id);
+  };
+
+  const onAddToCartHandler = (productForCart: NewCartProduct) => {
+    addCartProduct(productForCart);
+    setIsAdded(true);
   };
 
   return (
@@ -27,14 +33,24 @@ export const Card: React.FC<Props> = (props) => {
         <Link
           to={{
             pathname: `/edit_view/${product.id}`,
-            state: { ...product },
+            state: product,
           }}
           className={styles.card__link}
         >
           <Button type="button" content="Edit" />
         </Link>
         <Button type="submit" content="Delete" onClick={() => onDeleteHandler(product.id)} />
-        <Button type="button" content="Add to cart" />
+        <Button
+          type="button"
+          content="Add to cart"
+          disabled={isAdded}
+          onClick={() => onAddToCartHandler({
+            title: product.title,
+            description: product.description,
+            price: product.price,
+            quantity: 1,
+          })}
+        />
       </form>
     </li>
   );

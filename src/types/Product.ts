@@ -11,3 +11,18 @@ export interface NewProduct {
   price: number;
   description: string;
 }
+
+export interface CartProduct {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  quantity: number;
+}
+
+export interface NewCartProduct {
+  title: string;
+  description: string;
+  price: number;
+  quantity: number;
+}

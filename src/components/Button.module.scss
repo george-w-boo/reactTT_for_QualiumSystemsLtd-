@@ -43,3 +43,8 @@
   box-shadow: #3c4fe0 0 3px 7px inset;
   transform: translateY(2px);
 }
+
+.button:disabled {
+  background-image: radial-gradient(100% 100% at 100% 0, grey 0, black 100%);
+  pointer-events: none;
+}

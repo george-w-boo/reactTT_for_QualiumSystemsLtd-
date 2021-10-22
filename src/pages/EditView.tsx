@@ -41,7 +41,7 @@ export const EditView: React.FC = () => {
         when={isEntering}
         message={() => 'Are you sure you want to leave? All your entered data will be lost.'}
       />
-      <h1>Create View</h1>
+      <h1>Edit View</h1>
       <form action="#" onSubmit={onSubmitHandler} onFocus={formFocusHandler}>
         <input
           type="text"

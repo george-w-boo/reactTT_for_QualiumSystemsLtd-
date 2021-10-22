@@ -53,6 +53,9 @@ export const MainView: React.FC = () => {
       <Link to="/create_view" className={styles['create-view-link']}>
         <Button type="button" content="Create View" />
       </Link>
+      <Link to="/cart_view" className={styles['create-view-link']}>
+        <Button type="button" content="Cart" />
+      </Link>
       <FilterByTitle onFilter={filterByTitle} />
       <ProductList products={currentPageProducts} loadingStatus={isLoading} />
       {filteredProducts.length > 10 && (
