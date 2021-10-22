@@ -1,32 +1,34 @@
 import React, { useState } from 'react';
-import { useHistory, Prompt } from 'react-router-dom';
+import { useHistory, Prompt, useLocation } from 'react-router-dom';
 import { Product } from '../types/Product';
 import { Button } from '../components/Button';
 import { editProduct } from '../api/api';
 
-type Props = {
-  product: Product;
-};
+interface Location {
+  pathname: string;
+  state: Product;
+}
 
-export const EditView: React.FC<Props> = (props) => {
-  const { product } = props;
+export const EditView: React.FC = () => {
+  const location: Location = useLocation();
+  const { state } = location;
 
-  const [title, setTitle] = useState(product.title);
-  const [price, setPrice] = useState(product.price);
-  const [description, setDescription] = useState(product.description);
+  const [title, setTitle] = useState(state.title);
+  const [price, setPrice] = useState(state.price);
+  const [description, setDescription] = useState(state.description);
   const [isEntering, setIsEntering] = useState(false);
   const history = useHistory();
 
   const onSubmitHandler = (event: React.FormEvent) => {
     event.preventDefault();
 
-    editProduct(product.id, {
+    editProduct(state.id, {
       title,
       price,
       description,
     });
 
-    history.push('/main_view');
+    history.replace('/');
   };
 
   const formFocusHandler = () => {

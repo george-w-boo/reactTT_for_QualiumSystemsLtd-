@@ -2,7 +2,7 @@
   "products": [
     {
       "title": "Scoda",
-      "price": 600,
+      "price": 700,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "id": "jko2vslbj4"
     },
@@ -14,11 +14,10 @@
       "inCart": false
     },
     {
-      "id": "tdr6kubr2xd",
       "title": "Tesla",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "price": 700,
-      "inCart": false
+      "description": "Elon Mask's creature ))",
+      "id": "tdr6kubr2xd"
     },
     {
       "id": "ct4w8vhab5p",
@@ -105,9 +104,21 @@
     },
     {
       "title": "Zaporozhec",
-      "price": 300,
+      "price": 305,
       "description": "Made in Ukraine",
       "id": "CdVkMPc"
+    },
+    {
+      "title": "Lada",
+      "price": 0,
+      "description": "The worst car in the world",
+      "id": "OVh4wAu"
+    },
+    {
+      "title": "Lada 2",
+      "price": 0,
+      "description": "Shitty shit",
+      "id": "XTb9CV3"
     }
   ],
   "cart": [

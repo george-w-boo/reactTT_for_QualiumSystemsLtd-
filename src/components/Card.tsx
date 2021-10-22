@@ -24,7 +24,13 @@ export const Card: React.FC<Props> = (props) => {
       <p className={styles['card__price-tag']}>{`$${product.price}`}</p>
       <p className={styles.card__description}>{product.description}</p>
       <form action="" className={styles.card__form}>
-        <Link to={`/edit_view/${product.id}`} className={styles.card__link}>
+        <Link
+          to={{
+            pathname: `/edit_view/${product.id}`,
+            state: { ...product },
+          }}
+          className={styles.card__link}
+        >
           <Button type="button" content="Edit" />
         </Link>
         <Button type="submit" content="Delete" onClick={() => onDeleteHandler(product.id)} />
