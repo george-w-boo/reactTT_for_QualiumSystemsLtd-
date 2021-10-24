@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import CartContext from '../context/cart-context';
 
-import { deleteProduct, addCartProduct } from '../api/api';
+import { deleteProduct } from '../api/api';
 
-import { Product, NewCartProduct } from '../types/Product';
+import { Product, CartProduct } from '../types/Product';
 import { Button } from './Button';
 import styles from './Card.module.scss';
 
@@ -12,6 +13,8 @@ type Props = {
 };
 
 export const Card: React.FC<Props> = (props) => {
+  const cartContext = useContext(CartContext);
+
   const { product } = props;
   const [isAdded, setIsAdded] = useState(false);
 
@@ -19,8 +22,8 @@ export const Card: React.FC<Props> = (props) => {
     deleteProduct(id);
   };
 
-  const onAddToCartHandler = (productForCart: NewCartProduct) => {
-    addCartProduct(productForCart);
+  const onAddToCartHandler = (productForCart: CartProduct) => {
+    cartContext?.setCart((currentState: CartProduct[]) => [...currentState, productForCart]);
     setIsAdded(true);
   };
 
@@ -45,6 +48,7 @@ export const Card: React.FC<Props> = (props) => {
           content="Add to cart"
           disabled={isAdded}
           onClick={() => onAddToCartHandler({
+            id: product.id,
             title: product.title,
             description: product.description,
             price: product.price,

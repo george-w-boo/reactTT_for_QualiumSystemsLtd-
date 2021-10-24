@@ -1,24 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { CartProduct } from '../types/Product';
-import { getCartProducts } from '../api/api';
 
 interface CartContextInterface {
   cart: CartProduct[],
-  setCart: React.Dispatch<React.SetStateAction<CartProduct[] | null>>
+  setCart: React.Dispatch<React.SetStateAction<CartProduct[]>>
 }
 
 const CartContext = React.createContext<CartContextInterface | null>(null);
 
 export const CartContextProvider: React.FC = ({ children }) => {
-  const [cart, setCart] = useState<CartProduct[] | null>(null);
+  const [cart, setCart] = useState<CartProduct[]>([]);
 
   useEffect(() => {
-    (async () => {
-      const cartProductsFromApi = await getCartProducts();
-
-      setCart(cartProductsFromApi);
-    })();
-  }, [cart?.length]);
+    localStorage.setItem('products', JSON.stringify(cart));
+  }, [cart.length]);
 
   if (!cart) {
     return <p>Loading...</p>;
